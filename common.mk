@@ -121,8 +121,6 @@ PRODUCT_PACKAGES += \
     Terminal \
     PixelLauncher \
     WallpaperPickerGoogle \
-    ViaBrowser \
-    AEXPapers \
     OmniStyle \
     CalendarWidget \
     Turbo
@@ -221,7 +219,6 @@ PRODUCT_PACKAGES += \
 	messaging \
 	LiveWallpapers \
 	LiveWallpapersPicker \
-        Phonograph \
 	OmniJaws
 
 # Set cache location
@@ -237,8 +234,8 @@ endif
 EXTENDED_VERSION = v4.1
 
 ifndef EXTENDED_BUILD_TYPE
-    EXTENDED_BUILD_TYPE := UNOFFICIAL
-    PLATFORM_VERSION_CODENAME := UNOFFICIAL
+    EXTENDED_BUILD_TYPE := SHISHU
+    PLATFORM_VERSION_CODENAME := SHISHU
 endif 
 
 ifeq ($(EXTENDED_BUILD_TYPE), OFFICIAL)
@@ -257,3 +254,5 @@ EXTENDED_DISPLAY_VERSION := AospExtended-$(EXTENDED_VERSION)-$(EXTENDED_BUILD_TY
 
 PRODUCT_PROPERTY_OVERRIDES += \
   ro.extended.display.version=$(EXTENDED_DISPLAY_VERSION)
+  
+$(call inherit-product-if-exists, vendor/bootleggers/booty.mk)
